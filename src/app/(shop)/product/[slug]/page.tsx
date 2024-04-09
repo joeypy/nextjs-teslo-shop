@@ -7,6 +7,7 @@ import {
   ProductSliceShow,
   ProductMobileSliceShow,
   StockLabel,
+  AddToCart,
 } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { Metadata, ResolvingMetadata } from "next";
@@ -75,16 +76,7 @@ const ProductBySlugPage = async ({ params }: Props) => {
         </h1>
         <p className="text-lg mb-5">${product.price}</p>
 
-        {/* Selector de tallas */}
-        <SizeSelector
-          availableSizes={product.sizes}
-          selectedSize={product.sizes[0]}
-        />
-        {/* Seelector de cantidad */}
-        <QuantitySelector quantity={1} />
-
-        {/* Button */}
-        <button className="btn-primary my-5">Agregar al carrito</button>
+        <AddToCart product={product} />
 
         {/* Descripción */}
         <h3 className="font-bold text-md">Descripción</h3>

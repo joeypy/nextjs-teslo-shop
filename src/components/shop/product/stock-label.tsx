@@ -2,7 +2,7 @@
 
 import { getStockBySlug } from "@/actions";
 import { titleFont } from "@/config/fonts";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type Props = {
   slug: string;
@@ -12,15 +12,15 @@ export const StockLabel = ({ slug }: Props) => {
   const [stock, setStock] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    getStock();
-  }, []);
-
-  const getStock = async () => {
+  const getStock = useCallback(async () => {
     const inStock = await getStockBySlug(slug);
     setIsLoading(false);
     setStock(inStock);
-  };
+  }, [slug]);
+
+  useEffect(() => {
+    getStock();
+  }, [getStock]);
 
   return (
     <>

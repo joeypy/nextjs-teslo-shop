@@ -1,22 +1,18 @@
 "use client";
 
-import clsx from "clsx";
 import { IoAddCircleOutline, IoRemoveCircleOutline } from "react-icons/io5";
-import { useState } from "react";
 
 type Props = {
   quantity: number;
+  inStock: number;
   onChange?: (value: number) => void;
 };
 
-export const QuantitySelector = ({ quantity, onChange }: Props) => {
-  const [count, setCount] = useState(quantity);
-
+export const QuantitySelector = ({ quantity, inStock, onChange }: Props) => {
   const onQuantityChanged = (value: number) => {
-    if (count + value < 1) return;
-
-    setCount((preState) => preState + value);
-    onChange && onChange(count + value);
+    if (quantity + value < 1) return;
+    if (Math.sign(value) == 1 && quantity + 1 > inStock) return;
+    onChange && onChange(quantity + value);
   };
 
   return (
@@ -26,10 +22,13 @@ export const QuantitySelector = ({ quantity, onChange }: Props) => {
       </button>
 
       <span className="w-20 mx-3 px-5 bg-gray-100 text-center rounded">
-        {count}
+        {quantity}
       </span>
 
-      <button onClick={() => onQuantityChanged(+1)}>
+      <button
+        onClick={() => onQuantityChanged(+1)}
+        disabled={quantity === inStock}
+      >
         <IoAddCircleOutline size={30} />
       </button>
     </div>
