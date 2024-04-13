@@ -6,6 +6,7 @@ export {
   setUserAddress,
 } from "./shop/checkout/set-user-address";
 export { getOrderById } from "./shop/checkout/get-order-by-id";
+export { setTransactionId } from "./payments/set-transaction-id";
 export { getOrdersByUser } from "./shop/checkout/get-orders-by-users";
 export { getCountries } from "./shop/checkout/get-countries";
 export { deleteUserAddress } from "./shop/checkout/delete-user-address";

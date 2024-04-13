@@ -26,4 +26,7 @@ export * from "./shop/product/product-mobile-slice-show";
 export * from "./auth/login-form";
 export * from "./auth/register-form";
 
-export * from "./providers/session-provider";
+export * from "./providers/providers";
+
+export * from "./paypal/paypal-button";
+export * from "./shop/orders/order-status";
