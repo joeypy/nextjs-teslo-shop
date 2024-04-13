@@ -12,6 +12,10 @@ export * from "./ui/submit-button";
 export * from "./shop/cart/products-in-cart";
 export * from "./shop/cart/order-summary";
 
+export * from "./shop/checkout/address-form";
+export * from "./shop/checkout/products-in-checkout";
+export * from "./shop/checkout/place-order";
+
 export * from "./shop/products/add-to-cart";
 export * from "./shop/product/stock-label";
 export * from "./shop/product/size-selector";
