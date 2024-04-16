@@ -9,3 +9,7 @@
 5. Correr las migraciones de Prisma ```npx prisma migrate dev````
 6. Ejecutar seed `yarn seed`
 7. Correr el proyecto `yarn dev`
+
+## Correr las migraciones en el servidor
+
+`npx prisma migrate deploy`

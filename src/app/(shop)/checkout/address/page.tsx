@@ -2,7 +2,7 @@ import { getUserAddress, getCountries } from "@/actions";
 import { auth } from "@/auth.config";
 import { AddressForm, Title } from "@/components";
 
-export default async function NamePage() {
+export default async function AddressPage() {
   const countries = await getCountries();
   const session = await auth();
 

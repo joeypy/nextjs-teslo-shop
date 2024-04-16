@@ -19,6 +19,7 @@ export * from "./shop/checkout/place-order";
 export * from "./shop/products/add-to-cart";
 export * from "./shop/product/stock-label";
 export * from "./shop/product/size-selector";
+export * from "./shop/product/product-image";
 export * from "./shop/product/quantity-selector";
 export * from "./shop/product/product-slice-show";
 export * from "./shop/product/product-mobile-slice-show";
@@ -27,6 +28,8 @@ export * from "./auth/login-form";
 export * from "./auth/register-form";
 
 export * from "./providers/providers";
+export * from "./admin/product/product-form";
 
 export * from "./paypal/paypal-button";
 export * from "./shop/orders/order-status";
+export * from "./admin/users/user-table";

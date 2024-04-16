@@ -2,16 +2,8 @@ import Link from "next/link";
 
 import { PlaceOrder, Title } from "@/components";
 import { ProductsInCheckout } from "@/components";
-import { useCartStore } from "@/store";
-import { redirect } from "next/navigation";
 
 export default function CheckoutPage() {
-  const cart = useCartStore((state) => state.cart);
-
-  if (cart.length === 0) {
-    redirect("/");
-  }
-
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px]">
